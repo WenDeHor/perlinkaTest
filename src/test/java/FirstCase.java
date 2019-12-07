@@ -39,24 +39,32 @@ public class FirstCase extends WebDriverSetingss {
         WebElement menu = driver.findElement(By.id("menu"));
         menu.findElement(By.cssSelector("[href=\"/index.php/component/virtuemart/view/category/category_id/8/s/rasprodazha\"]")).click();
 
-        // WebElement heder = driver.findElement(By.id("[href=\"/index.php/component/virtuemart/view/category/category_id/8/s/rasprodazha\"]"));
-        //heder.findElement(By.cssSelector("[href=\"/index.php/component/virtuemart/view/category/category_id/8/s/rasprodazha\"]")).click();
-
+       //driver.findElement(By.id("items-list clearfix")).click();
 //        int idproduct = 5000;
 //        Random random = new Random();
 //        int i = random.nextInt(10);
-//        int idP = idproduct+i;
-//        String url = "https://www.perlinka.ua/index.php/component/virtuemart/view/productdetails/virtuemart_product_id/" + idP;
-//        driver.get(url);
+//        int idP = idproduct;
+//        String url = ;
+
+      driver.findElement(By.cssSelector("[href=\"/index.php/component/virtuemart/view/productdetails/virtuemart_product_id/5004/demisezonnye_botinki_iz_nubuka,_na_lipuchkah\"]")).click();
+
+
+//        WebElement botom = driver.findElement(By.cssSelector("items-list clearfix"));
+//        botom.findElement(By.id(url)).click();
+//
+//        String title = driver.findElement(By.cssSelector("item-details__old-price")).getText();
+
+
+        // WebElement heder = driver.findElement(By.id("[href=\"/index.php/component/virtuemart/view/category/category_id/8/s/rasprodazha\"]"));
+        //heder.findElement(By.cssSelector("[href=\"/index.php/component/virtuemart/view/category/category_id/8/s/rasprodazha\"]")).click();
+
 
         //driver.findElement(By.className("[class=\"item item__discont\"]")).click();
 
-        String title = driver.findElement(By.className("[class=\"item item__discont\"]")).getText();
+        // String title = driver.findElement(By.className("[class=\"item item__discont\"]")).getText();
 
+//        Assert.assertEquals(title, "item-details__old-price");
 
-
-        Assert.assertTrue(title, true);
-       
 
         // driver.findElement(By.cssSelector("href=\"/index.php/component/virtuemart/view/productdetails/virtuemart_product_id/5005/demisezonnye_botinki_na_rebristoy_podoshve\""));
 
@@ -66,8 +74,7 @@ public class FirstCase extends WebDriverSetingss {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 
-
-      // WebElement title = driver.findElement(By.cssSelector("[item-details__old-price]"));
+        // WebElement title = driver.findElement(By.cssSelector("[item-details__old-price]"));
         //String title = driver.getTitle();
 
         //Assert.assertTrue(title.equals("[item-details__old-price]"));
