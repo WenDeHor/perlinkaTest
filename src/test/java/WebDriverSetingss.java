@@ -1,13 +1,17 @@
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 
 public class WebDriverSetingss {
-    public static WebDriver driver = null;
+    public static WebDriver driver;
+    public static WebElement sait;
+
 
     @BeforeTest
     public void before() {
@@ -15,8 +19,11 @@ public class WebDriverSetingss {
         driver = new ChromeDriver();
     }
 
-    @After
+    @AfterTest
     public void after() {
-        driver.quit();
+        if(driver==null){
+            driver.quit();
+        }
+
     }
 }

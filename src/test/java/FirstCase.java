@@ -6,10 +6,7 @@
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
-import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -19,9 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 
@@ -44,13 +39,27 @@ public class FirstCase extends WebDriverSetingss {
         WebDriverWait wait = new WebDriverWait(driver, 30, 500);
 
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("item__link")));
+    }
+
+    @Test
+    public void randomopen() {
+        openShues("a");
 
 
-        WebElement e = driver.findElement(By.className("item__link"));
-        List<WebElement>list = driver.findElement(By.cssSelector("item__link"));
+    }
 
-
-
+    public void openShues(String shuesTitle) {
+        //WebElement e = driver.findElement(By.className("item__link"));
+        WebElement sum = driver.findElement(By.className("item item__discont"));
+        List<WebElement> list = driver.findElement(By.className("item__link")).findElements(By.className("item item__discont"));
+        for (WebElement shuse : list) {
+            WebElement href = shuse.findElement(By.tagName("a"));
+            if (href.getTagName().contains(shuesTitle)) {
+                href.click();
+                break;
+            }
+            System.out.println(list.size());
+        }
 
 
         //TODO driver.findElement(By.cssSelector("[href=\"/index.php/component/virtuemart/view/productdetails/virtuemart_product_id/5004/demisezonnye_botinki_iz_nubuka,_na_lipuchkah\"]")).click();
