@@ -7,6 +7,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.By;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,6 +19,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -34,20 +37,35 @@ public class FirstCase extends WebDriverSetingss {
     @Test
     public void sales() {
         driver.get("https://www.perlinka.ua");
-        //WebDriverWait wait = new WebDriverWait(driver, 10);
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu")));
+
+
         WebElement menu = driver.findElement(By.id("menu"));
         menu.findElement(By.cssSelector("[href=\"/index.php/component/virtuemart/view/category/category_id/8/s/rasprodazha\"]")).click();
+        WebDriverWait wait = new WebDriverWait(driver, 30, 500);
 
-       //driver.findElement(By.id("items-list clearfix")).click();
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("item__link")));
+
+
+        WebElement e = driver.findElement(By.className("item__link"));
+        List<WebElement>list = driver.findElement(By.cssSelector("item__link"));
+
+
+
+
+
+        //TODO driver.findElement(By.cssSelector("[href=\"/index.php/component/virtuemart/view/productdetails/virtuemart_product_id/5004/demisezonnye_botinki_iz_nubuka,_na_lipuchkah\"]")).click();
+//WebDriverWait wait = new WebDriverWait(driver, 10);
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu")));
+
+        //driver.findElement(By.id("items-list clearfix")).click();
 //        int idproduct = 5000;
 //        Random random = new Random();
 //        int i = random.nextInt(10);
 //        int idP = idproduct;
 //        String url = ;
 
-      driver.findElement(By.cssSelector("[href=\"/index.php/component/virtuemart/view/productdetails/virtuemart_product_id/5004/demisezonnye_botinki_iz_nubuka,_na_lipuchkah\"]")).click();
-
+//        WebElement menu2 = driver.findElement(By.id("item item__discont"));
+//        menu2.findElement(By.cssSelector("[href=\"/index.php/component/virtuemart/view/productdetails/virtuemart_product_id/5004/demisezonnye_botinki_iz_nubuka,_na_lipuchkah\"]")).click();
 
 //        WebElement botom = driver.findElement(By.cssSelector("items-list clearfix"));
 //        botom.findElement(By.id(url)).click();
