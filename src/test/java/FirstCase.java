@@ -50,8 +50,13 @@ public class FirstCase extends WebDriverSetingss {
         menu.findElement(By.cssSelector("[href=\"/index.php/component/virtuemart/view/category/category_id/8/s/rasprodazha\"]")).click();
 
         List<WebElement> listOfElements = driver.findElements(By.cssSelector("[class=\"item item__discont\"]"));
-        System.out.println(listOfElements.size());
-        driver.findElement(By.cssSelector("[class=\"item item__discont\"]")).click();
+        for (int i = 0; i<1; i++) {
+            WebElement s = listOfElements.get(3);
+            s.click();
+            //driver.findElement(By.cssSelector("[class=\"item item__discont\"]")).click();
+        }
+
+
 
 
         // driver.findElement(By.tagName("div")).click();
